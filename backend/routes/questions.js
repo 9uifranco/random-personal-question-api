@@ -15,7 +15,7 @@ const {
 const { protect } = require('../middleware/authMiddleware')
 
 // Getting all
-router.get('/', getQuestions)
+router.get('/', protect, getQuestions)
 
 // Getting one
 router.get('/:id', getQuestion)
@@ -24,7 +24,7 @@ router.get('/:id', getQuestion)
 questionRouter.get('/', getRandomQuestion)
 
 // Creating one
-router.post('/', setQuestion)
+router.post('/', protect, setQuestion)
 
 // Updating one
 router.put('/:id', protect, updateQuestion)

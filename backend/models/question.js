@@ -13,6 +13,9 @@ const questionsSquema = new mongoose.Schema({
         type: Boolean,
         required: true
     }
+},
+{
+    timestamps: true
 })
 
 const Question = mongoose.model('Question', questionsSquema)
